@@ -1,0 +1,13 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height_interpolation\for_redistribution" />
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height_interpolation\for_testing" />
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height_interpolation\for_redistribution_files_only" />
+</ant>
+mcc -W 'java:geoid_height_interpolation,Class1' -T link:lib -d 'C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height_interpolation\for_testing' 'class{Class1:C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height.m}' 
+[Warning: Adding path "C:\Users\mohamed\Desktop\Graduation Project\Source Code"
+to Compiler path instance.] 
+'javac' is not recognized as an internal or external command,
+operable program or batch file.
+Error: An error occurred while shelling out to javac (error code = 1).
+Unable to build executable (specify the -v option for more information).

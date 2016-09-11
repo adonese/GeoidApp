@@ -1,0 +1,6 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoif_height\for_redistribution" />
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoif_height\for_testing" />
+</ant>
+mcc -W CTF:geoif_height -U -d 'C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoif_height\for_testing' -v 'C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height.m' 

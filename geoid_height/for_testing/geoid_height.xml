@@ -1,0 +1,794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>geoid_height</name>
+    </assembly>
+    <members>
+        <member name="T:geoid_height.Class1">
+            <summary>
+            The Class1 class provides a CLS compliant, MWArray interface to the MATLAB
+            functions contained in the files:
+            <newpara></newpara>
+            C:\Users\mohamed\Desktop\Graduation Project\Source Code\geoid_height.m
+            </summary>
+            <remarks>
+            @Version 0.0
+            </remarks>
+        </member>
+        <member name="M:geoid_height.Class1.#cctor">
+            <summary internal= "true">
+            The static constructor instantiates and initializes the MATLAB runtime instance.
+            </summary>
+        </member>
+        <member name="M:geoid_height.Class1.#ctor">
+            <summary>
+            Constructs a new instance of the Class1 class.
+            </summary>
+        </member>
+        <member name="M:geoid_height.Class1.Finalize">
+            <summary internal= "true">
+            Class destructor called by the CLR garbage collector.
+            </summary>
+        </member>
+        <member name="M:geoid_height.Class1.Dispose">
+            <summary>
+            Frees the native resources associated with this object
+            </summary>
+        </member>
+        <member name="M:geoid_height.Class1.Dispose(System.Boolean)">
+            <summary internal= "true">
+            Internal dispose function
+            </summary>
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height">
+             <summary>
+             Provides a single output, 0-input MWArrayinterface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 1-input MWArrayinterface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 2-input MWArrayinterface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides a single output, 3-input MWArrayinterface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="varargin">Array of MWArrays representing the input arguments 3
+             through varargin.length+2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides the standard 3-input MWArray interface to the geoid_height MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="lat">Input argument #1</param>
+             <param name="lon">Input argument #2</param>
+             <param name="varargin">Array of MWArrays representing the input arguments 3
+             through varargin.length+2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:geoid_height.Class1.geoid_height(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray[]@,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides an interface for the geoid_height function in which the input and output
+             arguments are specified as an array of MWArrays.
+             </summary>
+             <remarks>
+             This method will allocate and return by reference the output argument
+             array.<newpara></newpara>
+             M-Documentation:
+             GEOIDHEIGHT Implement a geopotential model to calculate geoid height
+             N = GEOIDHEIGHT( LAT, LON, MODEL ) calculates the geoid height as
+             determined from a selected geopotential model, MODEL. An array of M
+             geoid heights, N, are interpolated at M geocentric latitude, LAT, and M
+             geocentric longitude, LON, from a grid of point values in the tide-free
+             system, using the selected geopotential model, MODEL.  
+             The GEOIDHEIGHT function calculates geoid heights to 0.01 meters for
+             EGM96 and custom.  The GEOIDHEIGHT function calculates geoid heights to
+             0.001 meters for EGM2008.
+             The interpolation scheme wraps over the poles to allow for geoid height
+             calculations at and near these locations.
+             Alternate formats for calling geoid height are:
+             N = GEOIDHEIGHT( LAT, LON )
+             N = GEOIDHEIGHT( LAT, LON, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, MODEL, ACTION )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE )
+             N = GEOIDHEIGHT( LAT, LON, 'Custom', DATAFILE, ACTION )
+             Inputs for GEOIDHEIGHT are:
+             LAT      :an array of M geocentric latitudes in degrees where north
+             latitude is positive, and south latitude is negative. LAT
+             must be of type single or double. If LAT is not in the range
+             of [-90,90] it is wrapped to be within the range.
+             LON      :an array of M geocentric longitude in degrees where east
+             longitude is positive, west is negative. LON must be of type
+             single or double. If LON is not in the range of [0,360] it is
+             wrapped to be within the range.
+             MODEL    :a string specifying the geopotential model: 'EGM2008' (Earth),
+             'EGM96' (Earth), or 'Custom'.  The default is 'EGM96'.  
+             'EGM96' uses a 15-minute grid of point values in the
+             tide-free system, using EGM96 Geopotential Model to degree
+             and order 360.  The EGM2008 MODEL uses a 2.5-minute grid of
+             point values in the tide-free system, using the EGM2008
+             Geopotential Model to degree and order 2159. The geoid
+             undulations for EGM96 and EGM2008 are with respect to the
+             WGS84 ellipsoid. 
+             DATAFILE :a mat-file containing an array of geocentric
+             latitude breakpoints, 'latbp', an array of geocentric
+             longitude breakpoints, 'lonbp', a table of geoid height
+             values,'grid' and a even integer scalar greater than 2 for
+             number of interpolation points, 'windowSize'.  This is only
+             needed for a 'Custom' geopotential model.     
+             ACTION   :a string to determine action for out of range latitude or
+             longitude. Specify if out of range input invokes a 'Warning',
+             'Error', or no action ('None'). The default is 'Warning'.
+             Output for GEOIDHEIGHT is:
+             N        :an array of M geoid heights in meters with the same data type
+             as the input LAT.
+             Limitations:
+             This function using the 'EGM96' MODEL has the limitations of the 1996
+             Earth Geopotential Model.  For more information see the documentation.
+             The WGS84 EGM96 geoid undulations have an error range of +/- 0.5 to
+             +/- 1.0 meters worldwide.
+             This function using the 'EGM2008' MODEL has the limitations of the 2008
+             Earth Geopotential Model.  For more information see the documentation.
+             Examples:
+             Calculate the EGM96 geoid height at 42.4 degrees N latitude and 71.0 degrees 
+             W longitude with warning actions:
+             N = geoidheight( 42.4, -71.0 )
+             Calculate the EGM2008 geoid height at two different locations with
+             error actions.
+             N = geoidheight( [39.3, 33.4], [77.2, 36.5], 'egm2008','error')
+             Calculate a custom geoid height at two different locations with
+             no actions.
+             N = geoidheight( [39.3, 33.4], [-77.2, 36.5], 'custom', ...
+             'geoidegm96grid','none')
+             Note: This function uses geoid data that can be obtained using the
+             aeroDataPackage command.
+             See also GRAVITYWGS84, GRAVITYSPHERICALHARMONIC
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return</param>
+             <param name= "argsOut">Array of MWArray output arguments</param>
+             <param name= "argsIn">Array of MWArray input arguments</param>
+            
+        </member>
+        <member name="M:geoid_height.Class1.WaitForFiguresToDie">
+             <summary>
+             This method will cause a MATLAB figure window to behave as a modal dialog box.
+             The method will not return until all the figure windows associated with this
+             component have been closed.
+             </summary>
+             <remarks>
+             An application should only call this method when required to keep the
+             MATLAB figure window from disappearing.  Other techniques, such as calling
+             Console.ReadLine() from the application should be considered where
+             possible.</remarks>
+            
+        </member>
+    </members>
+</doc>

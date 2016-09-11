@@ -1,0 +1,26 @@
+%% I don't want it to be a function
+
+Ae = 0.6378136460E+07 ; 
+GM = 0.3986004415E+15;
+
+cnm(1:9 , 1:9) = cnm(1:9 , 1:9) - cnm_normal(8);
+
+
+h_waitbar      = waitbar(0 , sprintf('Computation: %s ...',label));
+
+Am             = zeros(Nlat , nmax1);
+Bm             = zeros(Nlat , nmax1);
+
+for m = 0:nmax
+   m1          = m + 1;
+   Pnm         = associatedLegendreFunction(nmax, m, colatd);
+   if n_functional      == 1      %label = 'PSI';
+      Am(:,m1) = Pnm*cnm(m1:nmax1 , m1);
+      Bm(:,m1) = Pnm*snm(m1:nmax1 , m1);
+      
+
+   end
+      waitbar((m + 1)/nmax);
+end
+
+grid       = GM/(Ae*ngrav*r*sin_mlat) * (Am*cos_mlon + Bm*sin_mlon);

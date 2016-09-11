@@ -1,0 +1,76 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_redistribution" />
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing" />
+  <mkdir dir="C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_redistribution_files_only" />
+</ant>
+mcc -W 'java:associatedLegendreFunction,Class1' -T link:lib -d 'C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing' 'class{Class1:C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction.m}' -a 'C:\Users\mohamed\Desktop\Graduation Project\Source Code\rad.m' 
+[Warning: Adding path "C:\Users\mohamed\Desktop\Graduation Project\Source Code"
+to Compiler path instance.] 
+Loading source files for package associatedLegendreFunction...
+Constructing Javadoc information...
+Creating destination directory: "C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\"
+Standard Doclet version 1.8.0_45
+Building tree for all the packages and classes...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\AssociatedLegendreFunctionMCRFactory.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\Class1.html...
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:113: warning: no @param for args
+    public static void main (String[] args)
+                       ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:143: error: unexpected end tag: </p>
+     * </p>
+       ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:170: error: unexpected end tag: </p>
+     * </p>
+       ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:202: error: unexpected end tag: </p>
+     * </p>
+       ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:63: warning: no @throws for com.mathworks.toolbox.javabuilder.MWException
+    public Class1() throws MWException
+           ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:92: warning: no @throws for com.mathworks.toolbox.javabuilder.MWException
+    public Class1(MWComponentOptions componentOptions) throws MWException
+           ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1.java:81: warning: no @throws for com.mathworks.toolbox.javabuilder.MWException
+    public Class1(String pathToComponent) throws MWException
+           ^
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\Class1Remote.html...
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1Remote.java:62: error: reference not found
+     * @throws java.jmi.RemoteException An error has occurred during the function call or 
+       ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1Remote.java:65: warning: no @throws for java.rmi.RemoteException
+    public Object[] associatedLegendreFunction(int nargout, Object... rhs) throws RemoteException;
+                    ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\Class1Remote.java:68: warning: no @throws for java.rmi.RemoteException
+    void dispose() throws RemoteException;
+         ^
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\package-frame.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\package-summary.html...
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\package-info.java:8: warning: empty <p> tag
+ * <p>
+   ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\package-info.java:15: error: unexpected end tag: </p>
+ * </p>
+   ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\package-info.java:21: warning: empty <p> tag
+ * <p>
+   ^
+C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\associatedLegendreFunction\package-info.java:27: error: unexpected end tag: </p>
+ * </p> 
+   ^
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\associatedLegendreFunction\package-tree.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\constant-values.html...
+Building index for all the packages and classes...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\overview-tree.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\index-all.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\deprecated-list.html...
+Building index for all classes...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\allclasses-frame.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\allclasses-noframe.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\index.html...
+Generating C:\Users\mohamed\Desktop\Graduation Project\Source Code\associatedLegendreFunction\for_testing\doc\html\help-doc.html...
+6 errors
+8 warnings
+Error: An error occurred while shelling out to javadoc (error code = 1).
+Unable to build executable (specify the -v option for more information).

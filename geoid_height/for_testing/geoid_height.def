@@ -1,0 +1,8 @@
+LIBRARY geoid_height
+EXPORTS
+geoid_heightInitialize
+geoid_heightInitializeWithHandlers
+geoid_heightTerminate
+geoid_heightPrintStackTrace
+mlxGeoid_height
+
